@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct ToggleView: View {
+    
+    let component: FieldModel
+    
+    @State private var isOn = false
+
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Toggle(component.label, isOn: $isOn)
+                   .padding()
     }
 }
 
-#Preview {
-    ToggleView()
-}
+//#Preview {
+//    ToggleView()
+//}

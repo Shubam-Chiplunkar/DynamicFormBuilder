@@ -8,11 +8,36 @@
 import SwiftUI
 
 struct CheckBoxView: View {
+    
+    let component: FieldModel
+    
+
+    @Binding var isChecked : Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+                    isChecked.toggle()
+                } label: {
+
+                    HStack(alignment: .top, spacing: 12) {
+
+                        Image(systemName:
+                                isChecked
+                                ? "checkmark.square.fill"
+                                : "square"
+                        )
+
+                        Text(component.label)
+
+                        Spacer()
+                    }
+                }
+                .buttonStyle(.plain)
+                .padding()
     }
 }
 
-#Preview {
-    CheckBoxView()
-}
+//#Preview {
+//    CheckBoxView()
+//}
+
